@@ -7,19 +7,9 @@ require('packer').startup(function(use)
   -- UI
   -- colorschemes
   use 'navarasu/onedark.nvim'
+  use 'kyazdani42/nvim-web-devicons'
   -- lualine
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-  }
+  use 'nvim-lualine/lualine.nvim'
   --file explore
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-     'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-  }
+  use 'nvim-tree/nvim-tree.lua'
 end)
-
-
-

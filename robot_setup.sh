@@ -15,7 +15,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
 )
-
+bindkey '`' autosuggest-accept
 #####################
 
 
