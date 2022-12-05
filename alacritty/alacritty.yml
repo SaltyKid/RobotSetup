@@ -1,0 +1,159 @@
+# 实时重载配置文件，不用重启测试配置选项
+live_config_reload: true
+
+# import:
+#  - /path/to/alacritty.yml
+
+# `env` 下的所有键值对将会被添加为环境变量
+env:  
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+
+window:
+  # Window dimensions (changes require restart)
+  # Number of lines/columns (not pixels) in the terminal. Both lines and columns
+  # must be non-zero for this to take effect. The number of columns must be at
+  # least `2`, while using a value of `0` for columns and lines will fall back
+  # to the window manager's recommended size
+  dimensions:
+    columns: 80
+    lines: 30
+
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #
+  # Values for `decorations` (macOS only):
+  #     - transparent: Title bar, transparent background and title bar buttons
+  #     - buttonless: Title bar, transparent background and no title bar buttons
+  decorations: full
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 0.8
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Windowed
+
+  # Window title
+  #title: Alacritty
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Scrolling distance multiplier.
+  multiplier: 3
+
+# Colors (Tango)
+colors:
+  primary:
+    background: "#000000"
+    foreground: "#C7C362"
+  cursor:
+    text: "#C7C362"
+    cursor: "#C7C362"
+  normal:
+    black: "#2E3436"
+    red: "#CC0000"
+    green: "#4E9A06"
+    yellow: "#C4A000"
+    blue: "#3465A4"
+    magenta: "#75507B"
+    cyan: "#06989A"
+    white: "#D3D7CF"
+  bright:
+    black: "#555753"
+    red: "#EF2929"
+    green: "#8AE234"
+    yellow: "#FCE94F"
+    blue: "#729FCF"
+    magenta: "#AD7FA8"
+    cyan: "#34E2E2"
+    white: "#EEEEEC"
+
+# 字体设置为等宽字体，可以用命令 fc-list 查看你系统的字体
+font:
+  size: 14
+  normal:
+    family: JetBrainsMono Nerd Font Mono
+    style: Medium
+  bold:
+    family: JetBrainsMono Nerd Font Mono
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font Mono
+    style: Bold Italic
+
+# 光标配置
+cursor:
+  # 光标样式
+  style:
+    # 光标形状
+    #
+    # 可以为下面的值:
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    shape: Underline
+
+    # 光标闪烁状态
+    #
+    # 可以为下面的值:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: On
+
+# Shell
+#
+# 随终端打开时启动的 Shell
+#
+# Default:
+#   - (macOS) /bin/bash --login
+#   - (Linux/BSD) user login shell
+#   - (Windows) powershell
+# shell:
+#   program: bash
+#  args:
+#    - --login
+
+# Vi 模式下的光标样式
+  # 同上面的配置项，如果设置为 None 那么会使用普通模式下的光标配置
+vi_mode_style: None
+
+key_bindings:
+  - { key: F11,                                            action:  ToggleFullscreen      }
+
+  - { key: I,      mods: Command,                          action: ToggleViMode           }
+  - { key: V,      mods: Alt,           mode: Vi|~Search,  action: ToggleNormalSelection  }
+  - { key: V,      mods: Alt|Shift,     mode: Vi|~Search,  action: ToggleLineSelection    }
+  - { key: V,      mods: Control,       mode: Vi|~Search,  action: ToggleBlockSelection   }
+  - { key: U,      mods: Command,       mode: ~Vi|~Search, action: ScrollHalfPageUp       }
+  - { key: D,      mods: Command,       mode: ~Vi|~Search, action: ScrollHalfPageDown     }
+  - { key: G,      mods: Alt,           mode: Vi|~Search,  action: ScrollToTop            }
+  - { key: G,      mods: Shift,         mode: Vi|~Search,  action: ScrollToBottom         }
+  - { key: K,      mods: Alt,           mode: Vi|~Search,  action: Up                     }
+  - { key: J,      mods: Alt,           mode: Vi|~Search,  action: Down                   }
+  - { key: H,      mods: Alt,           mode: Vi|~Search,  action: Left                   }
+ 
