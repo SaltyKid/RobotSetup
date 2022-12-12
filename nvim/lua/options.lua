@@ -2,17 +2,20 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 -- jk移动时光标下上方保留5行
-vim.opt.scrolloff = 5
-vim.opt.sidescrolloff = 5
--- 命令行高为2，提供足够的显示空间
-vim.opt.cmdheight = 2
-vim.opt.showcmd = true
-vim.opt.showmode = true
--- 显示匹配的括号
-vim.opt.showmatch = true
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 -- 样式
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
+-- 命令行高为2，提供足够的显示空间
+vim.opt.cmdheight = 2
+vim.opt.showcmd = true
+vim.opt.showmode = false
+
+-- 显示匹配的括号
+vim.opt.showmatch = true
+-- 永远显示tabline
+vim.opt.showtabline = 2
 -- 禁止折行
 vim.opt.wrap = false
 vim.wo.wrap = false
@@ -21,7 +24,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.swapfile = false
 -- 搜索
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.incsearch = true
 -- 搜索大小写不敏感，除非包含大写
 vim.opt.ignorecase = true
@@ -45,7 +48,11 @@ vim.opt.fileencoding = 'utf-8'
 vim.opt.autoread = true
 vim.bo.autoread = true
 -- 显示左侧图标指示列
+--vim.wo.signcolumn = 'yes'
 vim.wo.signcolumn = 'no'
 -- 不可见字符的显示，这里只把空格显示为一个点
 vim.opt.list = true
 vim.opt.listchars = "space:·"
+vim.opt.listchars = "tab:> "
+
+vim.opt.timeoutlen = 500

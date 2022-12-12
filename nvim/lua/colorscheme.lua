@@ -1,14 +1,12 @@
+local colorscheme = "onedark"
 
---vim.api.nvim_create_autocmd('TextYankPost',{
---  callback = function()
---    vim.highlight.on_yank {
---      higroup = 'IncSearch',
---      timeout = 300
---    }
---  end,
---})
+local status_ok, theme = pcall(require, colorscheme)
+if not status_ok then
+    vim.notify("colorscheme: " .. colorscheme .. " not found! ")
+    return
+end
 
-require('onedark').setup {
+local onedark_cfg = {
     --style = 'dark',
     --style = 'darker',
     --style = 'cool',
@@ -17,8 +15,10 @@ require('onedark').setup {
     style = 'warmer',
     transparent = true,
     lualine = {
-      transparent = false,
+        transparent = true
     },
 }
-require('onedark').load()
+
+theme.setup(onedark_cfg)
+theme.load()
 

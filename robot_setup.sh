@@ -29,4 +29,8 @@ sudo ln /usr/bin/nvim /usr/bin/vim.tiny
 mkdir -p ~/.local/share/nvim/site/pack
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+### checkhealth
+:checkhealth provider
+:checkhealth telescope
+
 ####################
