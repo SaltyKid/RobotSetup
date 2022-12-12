@@ -145,15 +145,15 @@ vi_mode_style: None
 key_bindings:
   - { key: F11,                                            action:  ToggleFullscreen      }
 
-  - { key: I,      mods: Command,                          action: ToggleViMode           }
-  - { key: V,      mods: Alt,           mode: Vi|~Search,  action: ToggleNormalSelection  }
-  - { key: V,      mods: Alt|Shift,     mode: Vi|~Search,  action: ToggleLineSelection    }
-  - { key: V,      mods: Control,       mode: Vi|~Search,  action: ToggleBlockSelection   }
-  - { key: U,      mods: Command,       mode: ~Vi|~Search, action: ScrollHalfPageUp       }
-  - { key: D,      mods: Command,       mode: ~Vi|~Search, action: ScrollHalfPageDown     }
-  - { key: G,      mods: Alt,           mode: Vi|~Search,  action: ScrollToTop            }
-  - { key: G,      mods: Shift,         mode: Vi|~Search,  action: ScrollToBottom         }
-  - { key: K,      mods: Alt,           mode: Vi|~Search,  action: Up                     }
-  - { key: J,      mods: Alt,           mode: Vi|~Search,  action: Down                   }
-  - { key: H,      mods: Alt,           mode: Vi|~Search,  action: Left                   }
+    #- { key: I,      mods: Command,                          action: ToggleViMode           }
+    #- { key: V,      mods: Alt,           mode: Vi|~Search,  action: ToggleNormalSelection  }
+    #- { key: V,      mods: Alt|Shift,     mode: Vi|~Search,  action: ToggleLineSelection    }
+    #- { key: V,      mods: Control,       mode: Vi|~Search,  action: ToggleBlockSelection   }
+    #- { key: U,      mods: Command,       mode: ~Vi|~Search, action: ScrollHalfPageUp       }
+    #- { key: D,      mods: Command,       mode: ~Vi|~Search, action: ScrollHalfPageDown     }
+    #- { key: G,      mods: Alt,           mode: Vi|~Search,  action: ScrollToTop            }
+    #- { key: G,      mods: Shift,         mode: Vi|~Search,  action: ScrollToBottom         }
+    #- { key: K,      mods: Alt,           mode: Vi|~Search,  action: Up                     }
+    #- { key: J,      mods: Alt,           mode: Vi|~Search,  action: Down                   }
+    #- { key: H,      mods: Alt,           mode: Vi|~Search,  action: Left                   }
  
