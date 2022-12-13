@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 require('packer').startup({
     function(use)
         use 'wbthomason/packer.nvim'
-        -- telescope
+        -- telescope 
         use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
         -- LSP
         use 'neovim/nvim-lspconfig'
@@ -24,7 +24,10 @@ require('packer').startup({
         -- autopairs
         use "windwp/nvim-autopairs"
         -- treesittetr
-        use "nvim-treesitter/nvim-treesitter"
+        use {
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate",
+        }
         -- UI
         use "mtdl9/vim-log-highlighting"
         -- colorschemes
@@ -41,7 +44,8 @@ require('packer').startup({
             "akinsho/bufferline.nvim", -- tab
             tag = "v1.2.0",
         }
-
+        -- terminal
+        use "akinsho/toggleterm.nvim"
         -- Other
         use "Pocco81/AutoSave.nvim"
         use "voldikss/vim-translator"

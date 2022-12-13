@@ -34,8 +34,8 @@ keymap("n", "<C-Up>", ":resize +10<CR>",opts)
 keymap("n", "<C-Down>", ":resize -10<CR>",opts)
 
 -- terminal
-keymap("n", "<C-j>", ":terminal<CR>", opts)
-keymap("t", "<Esc>", "<C-\\><C-n>", opts)
+--keymap("n", "<C-j>", ":terminal<CR>", opts)
+--keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 
 
 -- plugin_keymaps --
@@ -46,11 +46,12 @@ keymap("n", "zz", ":foldclose<CR>", opts)
 keymap("n", "Z", ":foldopen<CR>", opts)
 
 -- bufferline
-keymap("n", "<space>bl", ":BufferLineCyclePrev<CR>", opts)
-keymap("n", "<space>bh", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<space>cc", ":bdelete!<CR>", opts)
-keymap("n", "<space>ch", ":BufferLineCloseRight<CR>", opts)
-keymap("n", "<space>cl", ":BufferLineCloseLeft<CR>", opts)
+keymap("n", "t", "<Nop>", opts)
+keymap("n", "tl", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "th", ":BufferLineCyclePrev<CR>", opts)
+keymap("n", "<leader>cc", ":bdelete!<CR>", opts)
+keymap("n", "<leader>ch", ":BufferLineCloseLeft<CR>", opts)
+keymap("n", "<leader>cl", ":BufferLineCloseRight<CR>", opts)
 
 -- translator
 keymap("n", "<C-t>", ":TranslateW<CR>", opts)
@@ -60,6 +61,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 plugin_keymaps.nvimtree_keymap = {
     -- 打开文件或文件夹
     { key = {"<CR>", "o", "<2-LeftMouse>"}, action = "edit" },
+    { key = {"<C-]>", "<2-RightMouse>"}, action = "cd" },
     -- 分屏打开文件
     { key = "v", action = "vsplit" },
     { key = "h", action = "split" },
@@ -106,11 +108,11 @@ plugin_keymaps.lspkeymap = function (mapbuf)
     -- rename
     mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     -- code action
-    mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+    --mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     -- go xx
     mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
     mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+    --mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
     mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
     mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     -- diagnostic
@@ -194,6 +196,11 @@ plugin_keymaps.lspcmp = function(cmp)
     end, { "i", "s" }),
     -- end of super Tab
   }
+end
+
+-- toggleterm
+plugin_keymaps.toggleterm_keymap = function(toggleterm)
+    vim.keymap.set({ "n", "t" }, "<C-j>", toggleterm.toggleA)
 end
 
 

@@ -6,5 +6,7 @@ require("conf.telescope")
 require("conf.autopairs")
 require("conf.indent-blankline")
 require("conf.vim-translator")
+require("conf.toggleterm")
 --require("conf.nvim-lastplace")
 --require("conf.autosave")
+
