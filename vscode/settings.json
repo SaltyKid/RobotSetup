@@ -1,0 +1,381 @@
+{
+    /* editor */
+    "editor.lineHeight": 20,
+    "editor.fontSize": 18,
+    "editor.fontWeight": "500",
+    //"editor.fontFamily": "Source Code Pro Medium",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.detectIndentation": false, //< 不基于文本内容选择缩进采用制表符还是空格
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorBlinking": "smooth", //< 编辑器光标的闪烁平滑
+    "editor.smoothScrolling": true, //< 使编辑器滚动变平滑
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.insertSpaces": true, //< 敲下tab键插入4个空格
+    "editor.stickyTabStops": true,
+    "editor.wordBasedSuggestions": false, //< 关闭基于文件中单词联想的功能
+    "editor.suggestSelection": "first",
+    "editor.lineNumbers": "relative",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.minimap.enabled": false,
+    "editor.largeFileOptimizations": false,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.stickyScroll.enabled": true,
+    // "editor.fontLigatures": true,
+    /* terminal */
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontWeight": "bold",
+    "terminal.integrated.fontWeightBold": "bold",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.letterSpacing": 1,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.gpuAcceleration": "on",
+    /* file */
+    "files.autoSave": "afterDelay",
+    "files.associations": {
+        "*.c": "c",
+        "*.rs": "rust",
+        ".clang-format": "yaml",
+        "*.log": "log",
+        "*.JLinkScript": "cpp",
+        "*.json": "jsonc"
+    },
+    "files.maxMemoryForLargeFilesMB": 16384,
+    /* workbench */
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.activityBar.visible": false,
+    "workbench.list.smoothScrolling": true,
+    "workbench.startupEditor": "none",
+    "workbench.sideBar.location": "right",
+    /* debug */
+    "debug.console.fontSize": 16,
+    "debug.console.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "debug.allowBreakpointsEverywhere": true,
+    /* explorer */
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    /* search */
+    "search.followSymlinks": false,
+    /* window */
+    "window.menuBarVisibility": "toggle",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}",
+    /* vim */
+    "vim.useCtrlKeys": false,
+    "vim.leader": ";",
+    "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "<C-d>": false,
+        "<C-s>": false,
+        "<C-z>": false,
+        "<C-c>": false,
+        "<C-v>": true
+    },
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+            ],
+        },
+        {
+            "before": [
+                "t",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.closeEditorsToTheLeft"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.closeEditorsToTheRight"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "v"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "d"
+            ],
+            "commands": [
+                "workbench.action.splitEditorOrthogonal"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "j"
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "editor.action.format"
+            ],
+        },
+        {
+            "before": ["g", "h"],
+            "commands": [
+                "editor.action.showHover"
+            ],
+        },
+        {
+            "before": ["g", "d"],
+            "commands": [
+                "editor.action.revealDefinition"
+            ],
+        },
+        {
+            "before": ["g", "i"],
+            "commands": [
+                "editor.action.goToImplementation"
+            ],
+        },
+        {
+            "before": ["g", "r"],
+            "commands": [
+                "editor.action.goToReferences"
+            ],
+        },
+        {
+            "before": ["g", "p"],
+            "commands": [
+                "workbench.actions.view.problems"
+            ],
+        },
+        {
+            "before": ["g", "k"],
+            "commands": [
+                "editor.action.marker.prev"
+            ],
+        },
+        {
+            "before": ["g", "j"],
+            "commands": [
+                "editor.action.marker.next"
+            ],
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "p"
+            ],
+            "after": [
+                "p",
+                "g",
+                "v",
+                "y"
+            ]
+        }
+    ],
+    "vim.autoindent": false,
+    "vim.easymotion": true,
+
+    /* better-comments */
+    "better-comments.highlightPlainText": true,
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "underline": true,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "<",
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        }
+    ],
+    /* git */
+    "git.autorefresh": false,
+    "git.autoRepositoryDetection": false,
+    "git.countBadge": "off",
+    "git.decorations.enabled": false,
+    "git.detectSubmodules": false,
+    "git.enabled": false,
+    /* commentTranslate */
+    "commentTranslate.source": "DarkCWK.youdao-youdao",
+    "commentTranslate.targetLanguage": "zh-CN",
+    "commentTranslate.multiLineMerge": true,
+    /* rust-analyzer */
+    "rust-analyzer.checkOnSave.enable": false,
+    "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true
+    },
+    /* other */
+    "npm.autoDetect": "off",
+    "security.workspace.trust.untrustedFiles": "open",
+    "telemetry.telemetryLevel": "off",
+    "extensions.ignoreRecommendations": true,
+
+    /* clangd */
+    "clangd.path": "/home/linyuzhou/.local/share/nvim/lsp_servers/clangd/clangd/bin/clangd",
+    "clangd.arguments": [
+        // -- 后台建立索引，并持久化到disk
+        "--background-index",
+        // -- 开启clang-tidy
+        "--clang-tidy",
+        // -- 指定clang-tidy的检查参数， 摘抄自cmu15445. 全部参数可参考 https://clang.llvm.org/extra/clang-tidy/checks
+        //"--clang-tidy-checks=bugprone-*, clang-analyzer-*, google-*, modernize-*, performance-*, portability-*, readability-*, -bugprone-too-small-loop-variable, -clang-analyzer-cplusplus.NewDelete, -clang-analyzer-cplusplus.NewDeleteLeaks, -modernize-use-nodiscard, -modernize-avoid-c-arrays, -readability-magic-numbers, -bugprone-branch-clone, -bugprone-signed-char-misuse, -bugprone-unhandled-self-assignment, -clang-diagnostic-implicit-int-float-conversion, -modernize-use-auto, -modernize-use-trailing-return-type, -readability-convert-member-functions-to-static, -readability-make-member-function-const, -readability-qualified-auto, -readability-redundant-access-specifiers,",
+        "--clang-tidy-checks=**",
+        // -- 代码完成建议粒度  detailed 完成类型信息   bundled  合并相似完成项
+        "--completion-style=detailed",
+        //"--fallback-style=file:/home/linyuzhou/.config/clangd/",
+        "--fallback-style=Google",
+        // --"--cross-file-rename=true",
+        // -- PCH 存储位置  disk 磁盘  memory 内存
+        "--pch-storage=memory",
+        // -- 添加 #include  iwyu   /  never 从不
+        // "--header-insertion=iwyu",
+        "--header-insertion=never",
+        "--compile-commands-dir=${workspaceFolder}/build",
+        "--query-driver=/usr/bin/clang,/usr/bin/clang++,/usr/bin/gcc,/usr/bin/g++,/home/linyuzhou/My_Tools/gcc-arm-none-eabi-10.3/bin/arm-none-eabi-gcc",
+        // -- 启用这项时，补全函数时，将会给参数提供占位符，键入后按 Tab 可以切换到下一占位符
+        // --"--function-arg-placeholders=false",
+        // -- log 信息  error 、 info(high level excution tracing) 、 verbose(low level details)
+        "--log=info",
+        // --"--ranking-model=decision_forest",
+        // -- 输入建议中，已包含头文件的项与还未包含头文件的项会以圆点加以区分
+        "--header-insertion-decorators",
+        "-j=32",
+        "--pretty",
+  ],
+
+}
