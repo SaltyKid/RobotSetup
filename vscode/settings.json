@@ -3,7 +3,6 @@
     "editor.lineHeight": 20,
     "editor.fontSize": 18,
     "editor.fontWeight": "500",
-    //"editor.fontFamily": "Source Code Pro Medium",
     "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.detectIndentation": false, //< 不基于文本内容选择缩进采用制表符还是空格
     "editor.renderWhitespace": "boundary",
@@ -21,7 +20,6 @@
     "editor.largeFileOptimizations": false,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.stickyScroll.enabled": true,
-    // "editor.fontLigatures": true,
     /* terminal */
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 16,
@@ -29,26 +27,23 @@
     "terminal.integrated.fontWeightBold": "bold",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.letterSpacing": 1,
-    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
     "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.smoothScrolling": true,
     /* file */
     "files.autoSave": "afterDelay",
     "files.associations": {
-        "*.c": "c",
-        "*.rs": "rust",
         ".clang-format": "yaml",
-        "*.log": "log",
-        "*.JLinkScript": "cpp",
         "*.json": "jsonc"
     },
     "files.maxMemoryForLargeFilesMB": 16384,
     /* workbench */
-    "workbench.iconTheme": "vscode-great-icons",
     "workbench.colorTheme": "One Dark Pro",
-    "workbench.activityBar.visible": false,
-    "workbench.list.smoothScrolling": true,
+    "workbench.iconTheme": "vscode-great-icons",
     "workbench.startupEditor": "none",
+    "workbench.activityBar.visible": false,
     "workbench.sideBar.location": "right",
+    "workbench.list.smoothScrolling": true,
     /* debug */
     "debug.console.fontSize": 16,
     "debug.console.fontFamily": "JetBrainsMono Nerd Font Mono",
@@ -61,7 +56,16 @@
     /* window */
     "window.menuBarVisibility": "toggle",
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}",
+    /* security */
+    "security.workspace.trust.untrustedFiles": "open",
+    /* telemetry */
+    "telemetry.telemetryLevel": "off",
+    /* extensions */
+    "extensions.ignoreRecommendations": true,
+    /*  Others */
     /* vim */
+    "vim.autoindent": false,
+    "vim.easymotion": true,
     "vim.useCtrlKeys": false,
     "vim.leader": ";",
     "vim.useSystemClipboard": true,
@@ -90,8 +94,8 @@
                 "e"
             ],
             "commands": [
-                "workbench.action.toggleSidebarVisibility",
-            ],
+                "workbench.action.toggleSidebarVisibility"
+            ]
         },
         {
             "before": [
@@ -202,50 +206,71 @@
             ],
             "commands": [
                 "editor.action.format"
-            ],
+            ]
         },
         {
-            "before": ["g", "h"],
+            "before": [
+                "g",
+                "h"
+            ],
             "commands": [
                 "editor.action.showHover"
-            ],
+            ]
         },
         {
-            "before": ["g", "d"],
+            "before": [
+                "g",
+                "d"
+            ],
             "commands": [
                 "editor.action.revealDefinition"
-            ],
+            ]
         },
         {
-            "before": ["g", "i"],
+            "before": [
+                "g",
+                "i"
+            ],
             "commands": [
                 "editor.action.goToImplementation"
-            ],
+            ]
         },
         {
-            "before": ["g", "r"],
+            "before": [
+                "g",
+                "r"
+            ],
             "commands": [
                 "editor.action.goToReferences"
-            ],
+            ]
         },
         {
-            "before": ["g", "p"],
+            "before": [
+                "g",
+                "p"
+            ],
             "commands": [
                 "workbench.actions.view.problems"
-            ],
+            ]
         },
         {
-            "before": ["g", "k"],
+            "before": [
+                "g",
+                "k"
+            ],
             "commands": [
                 "editor.action.marker.prev"
-            ],
+            ]
         },
         {
-            "before": ["g", "j"],
+            "before": [
+                "g",
+                "j"
+            ],
             "commands": [
                 "editor.action.marker.next"
-            ],
-        },
+            ]
+        }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -260,9 +285,6 @@
             ]
         }
     ],
-    "vim.autoindent": false,
-    "vim.easymotion": true,
-
     /* better-comments */
     "better-comments.highlightPlainText": true,
     "better-comments.tags": [
@@ -339,12 +361,6 @@
         "editor.defaultFormatter": "rust-lang.rust-analyzer",
         "editor.formatOnSave": true
     },
-    /* other */
-    "npm.autoDetect": "off",
-    "security.workspace.trust.untrustedFiles": "open",
-    "telemetry.telemetryLevel": "off",
-    "extensions.ignoreRecommendations": true,
-
     /* clangd */
     "clangd.path": "/home/linyuzhou/.local/share/nvim/lsp_servers/clangd/clangd/bin/clangd",
     "clangd.arguments": [
@@ -375,7 +391,8 @@
         // -- 输入建议中，已包含头文件的项与还未包含头文件的项会以圆点加以区分
         "--header-insertion-decorators",
         "-j=32",
-        "--pretty",
-  ],
-
+        "--pretty"
+    ],
+    /* other */
+    "npm.autoDetect": "off"
 }
