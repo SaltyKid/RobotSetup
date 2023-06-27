@@ -9,18 +9,19 @@ require('packer').startup({
         use 'neovim/nvim-lspconfig'
         use "williamboman/nvim-lsp-installer"
         use "ray-x/lsp_signature.nvim"
-        -- snippet 引擎
-        use "hrsh7th/vim-vsnip"
-        --  snippets
-        use "rafamadriz/friendly-snippets"
         -- cmp plugins
         use "hrsh7th/nvim-cmp"
         use "hrsh7th/cmp-buffer" -- buffer completions
         use "hrsh7th/cmp-path" -- path completions
         use "hrsh7th/cmp-cmdline" -- cmdline completions
         use "hrsh7th/cmp-nvim-lsp"
-        use "hrsh7th/cmp-nvim-lua"
-        use "ethanholz/nvim-lastplace"
+        --use "hrsh7th/cmp-nvim-lua"
+        -- snippet 引擎
+        use "hrsh7th/cmp-vsnip"
+        use "hrsh7th/vim-vsnip"
+        --  snippets
+        use "rafamadriz/friendly-snippets"
+        -- use "ethanholz/nvim-lastplace"
         -- autopairs
         use "windwp/nvim-autopairs"
         -- treesittetr
@@ -38,7 +39,10 @@ require('packer').startup({
         -- lualine
         use 'nvim-lualine/lualine.nvim'
         -- file explore
-        use 'nvim-tree/nvim-tree.lua'
+        use {
+            "nvim-tree/nvim-tree.lua",
+            commit = "ada2c6441d0844cc1995b5def24fd3e90cfa8032",
+        }
         -- tab bufferline
         use {
             "akinsho/bufferline.nvim", -- tab

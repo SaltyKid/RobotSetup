@@ -15,7 +15,7 @@ local lualine_cfg = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename', { 'lsp_progress', spinner_symbols = { " ", " ", " ", " ", " ", " " }, }, 'filesize' },
-        lualine_x = { 'progress', 'encoding', { 'fileformat', symbols = { unix = 'LF', dos = 'CRCF', max = 'CR' }, }, 'filetype', },
+        lualine_x = { 'progress', 'encoding', { 'fileformat', symbols = { unix = 'LF', dos = 'CRLF', max = 'CR' }, }, 'filetype', },
         --lualine_x = {'encoding'},
         lualine_y = {},
         --lualine_y = {'progress'},

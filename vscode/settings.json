@@ -1,14 +1,15 @@
 {
     /* editor */
     "editor.lineHeight": 20,
-    "editor.fontSize": 18,
+    "editor.fontSize": 20,
     "editor.fontWeight": "500",
-    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    //"editor.fontFamily": "Source Code Pro Medium",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.detectIndentation": false, //< 不基于文本内容选择缩进采用制表符还是空格
     "editor.renderWhitespace": "boundary",
     "editor.cursorBlinking": "smooth", //< 编辑器光标的闪烁平滑
     "editor.smoothScrolling": true, //< 使编辑器滚动变平滑
-    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSmoothCaretAnimation": "on",
     "editor.insertSpaces": true, //< 敲下tab键插入4个空格
     "editor.stickyTabStops": true,
     "editor.wordBasedSuggestions": false, //< 关闭基于文件中单词联想的功能
@@ -20,6 +21,10 @@
     "editor.largeFileOptimizations": false,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.stickyScroll.enabled": true,
+    "editor.inlayHints.enabled": "on",
+    "editor.fontLigatures": true,
+    "editor.scrollBeyondLastLine": false,
+    // "editor.fontLigatures": true,
     /* terminal */
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 16,
@@ -27,23 +32,26 @@
     "terminal.integrated.fontWeightBold": "bold",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.letterSpacing": 1,
-    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.gpuAcceleration": "on",
-    "terminal.integrated.smoothScrolling": true,
     /* file */
     "files.autoSave": "afterDelay",
     "files.associations": {
+        "*.c": "c",
+        "*.rs": "rust",
         ".clang-format": "yaml",
+        "*.log": "log",
+        "*.JLinkScript": "cpp",
         "*.json": "jsonc"
     },
-    "files.maxMemoryForLargeFilesMB": 16384,
     /* workbench */
-    "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "vscode-great-icons",
-    "workbench.startupEditor": "none",
     "workbench.activityBar.visible": false,
-    "workbench.sideBar.location": "right",
     "workbench.list.smoothScrolling": true,
+    "workbench.startupEditor": "none",
+    "workbench.sideBar.location": "right",
+    "workbench.editorLargeFileConfirmation": 100,
+    "workbench.colorTheme": "One Dark Pro Darker",
     /* debug */
     "debug.console.fontSize": 16,
     "debug.console.fontFamily": "JetBrainsMono Nerd Font Mono",
@@ -51,21 +59,10 @@
     /* explorer */
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    /* search */
-    "search.followSymlinks": false,
     /* window */
     "window.menuBarVisibility": "toggle",
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}",
-    /* security */
-    "security.workspace.trust.untrustedFiles": "open",
-    /* telemetry */
-    "telemetry.telemetryLevel": "off",
-    /* extensions */
-    "extensions.ignoreRecommendations": true,
-    /*  Others */
     /* vim */
-    "vim.autoindent": false,
-    "vim.easymotion": true,
     "vim.useCtrlKeys": false,
     "vim.leader": ";",
     "vim.useSystemClipboard": true,
@@ -94,8 +91,8 @@
                 "e"
             ],
             "commands": [
-                "workbench.action.toggleSidebarVisibility"
-            ]
+                "workbench.action.toggleSidebarVisibility",
+            ],
         },
         {
             "before": [
@@ -206,7 +203,7 @@
             ],
             "commands": [
                 "editor.action.format"
-            ]
+            ],
         },
         {
             "before": [
@@ -215,7 +212,7 @@
             ],
             "commands": [
                 "editor.action.showHover"
-            ]
+            ],
         },
         {
             "before": [
@@ -224,7 +221,7 @@
             ],
             "commands": [
                 "editor.action.revealDefinition"
-            ]
+            ],
         },
         {
             "before": [
@@ -233,7 +230,7 @@
             ],
             "commands": [
                 "editor.action.goToImplementation"
-            ]
+            ],
         },
         {
             "before": [
@@ -242,7 +239,7 @@
             ],
             "commands": [
                 "editor.action.goToReferences"
-            ]
+            ],
         },
         {
             "before": [
@@ -251,7 +248,7 @@
             ],
             "commands": [
                 "workbench.actions.view.problems"
-            ]
+            ],
         },
         {
             "before": [
@@ -260,7 +257,7 @@
             ],
             "commands": [
                 "editor.action.marker.prev"
-            ]
+            ],
         },
         {
             "before": [
@@ -269,8 +266,16 @@
             ],
             "commands": [
                 "editor.action.marker.next"
-            ]
-        }
+            ],
+        },
+        {
+            "before": [
+                "u"
+            ],
+            "commands": [
+                "undo"
+            ],
+        },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -285,6 +290,8 @@
             ]
         }
     ],
+    "vim.autoindent": false,
+    "vim.incsearch": false,
     /* better-comments */
     "better-comments.highlightPlainText": true,
     "better-comments.tags": [
@@ -299,7 +306,7 @@
         },
         {
             "tag": "?",
-            "color": "#3498DB",
+            "color": "#98C379",
             "strikethrough": false,
             "underline": false,
             "backgroundColor": "transparent",
@@ -334,8 +341,8 @@
             "italic": false
         },
         {
-            "tag": "<",
-            "color": "#98C379",
+            "tag": "/*",
+            "color": "#474747",
             "strikethrough": false,
             "underline": false,
             "backgroundColor": "transparent",
@@ -343,24 +350,23 @@
             "italic": false
         }
     ],
-    /* git */
-    "git.autorefresh": false,
-    "git.autoRepositoryDetection": false,
-    "git.countBadge": "off",
-    "git.decorations.enabled": false,
-    "git.detectSubmodules": false,
-    "git.enabled": false,
     /* commentTranslate */
     "commentTranslate.source": "DarkCWK.youdao-youdao",
     "commentTranslate.targetLanguage": "zh-CN",
     "commentTranslate.multiLineMerge": true,
+    "commentTranslate.hover.string": true,
+    "commentTranslate.hover.variable": true,
     /* rust-analyzer */
-    "rust-analyzer.checkOnSave.enable": false,
     "rust-analyzer.rustfmt.rangeFormatting.enable": true,
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer",
         "editor.formatOnSave": true
     },
+    /* hexeditor */
+    "hexeditor.columnWidth": 8,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
     /* clangd */
     "clangd.path": "/home/linyuzhou/.local/share/nvim/lsp_servers/clangd/clangd/bin/clangd",
     "clangd.arguments": [
@@ -369,30 +375,46 @@
         // -- 开启clang-tidy
         "--clang-tidy",
         // -- 指定clang-tidy的检查参数， 摘抄自cmu15445. 全部参数可参考 https://clang.llvm.org/extra/clang-tidy/checks
-        //"--clang-tidy-checks=bugprone-*, clang-analyzer-*, google-*, modernize-*, performance-*, portability-*, readability-*, -bugprone-too-small-loop-variable, -clang-analyzer-cplusplus.NewDelete, -clang-analyzer-cplusplus.NewDeleteLeaks, -modernize-use-nodiscard, -modernize-avoid-c-arrays, -readability-magic-numbers, -bugprone-branch-clone, -bugprone-signed-char-misuse, -bugprone-unhandled-self-assignment, -clang-diagnostic-implicit-int-float-conversion, -modernize-use-auto, -modernize-use-trailing-return-type, -readability-convert-member-functions-to-static, -readability-make-member-function-const, -readability-qualified-auto, -readability-redundant-access-specifiers,",
-        "--clang-tidy-checks=**",
+        "--clang-tidy-checks=bugprone-*, clang-analyzer-*, google-*, modernize-*, performance-*, portability-*, readability-*, -bugprone-too-small-loop-variable, -clang-analyzer-cplusplus.NewDelete, -clang-analyzer-cplusplus.NewDeleteLeaks, -modernize-use-nodiscard, -modernize-avoid-c-arrays, -readability-magic-numbers, -bugprone-branch-clone, -bugprone-signed-char-misuse, -bugprone-unhandled-self-assignment, -clang-diagnostic-implicit-int-float-conversion, -modernize-use-auto, -modernize-use-trailing-return-type, -readability-convert-member-functions-to-static, -readability-make-member-function-const, -readability-qualified-auto, -readability-redundant-access-specifiers,",
+        //"--clang-tidy-checks=**",
         // -- 代码完成建议粒度  detailed 完成类型信息   bundled  合并相似完成项
-        "--completion-style=detailed",
+        "--completion-style=bundled",
         //"--fallback-style=file:/home/linyuzhou/.config/clangd/",
         "--fallback-style=Google",
-        // --"--cross-file-rename=true",
+        // -- 跨文件重名变量
+        "--cross-file-rename=true",
         // -- PCH 存储位置  disk 磁盘  memory 内存
         "--pch-storage=memory",
         // -- 添加 #include  iwyu   /  never 从不
         // "--header-insertion=iwyu",
         "--header-insertion=never",
-        "--compile-commands-dir=${workspaceFolder}/build",
-        "--query-driver=/usr/bin/clang,/usr/bin/clang++,/usr/bin/gcc,/usr/bin/g++,/home/linyuzhou/My_Tools/gcc-arm-none-eabi-10.3/bin/arm-none-eabi-gcc",
-        // -- 启用这项时，补全函数时，将会给参数提供占位符，键入后按 Tab 可以切换到下一占位符
-        // --"--function-arg-placeholders=false",
-        // -- log 信息  error 、 info(high level excution tracing) 、 verbose(low level details)
-        "--log=info",
-        // --"--ranking-model=decision_forest",
         // -- 输入建议中，已包含头文件的项与还未包含头文件的项会以圆点加以区分
         "--header-insertion-decorators",
+        // compelie_commands.json 文件的目录位置
+        "--compile-commands-dir=${workspaceFolder}/build",
+        "--query-driver=/usr/bin/clang,/usr/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
+        // -- 启用这项时，补全函数时，将会给参数提供占位符，键入后按 Tab 可以切换到下一占位符
+        "--function-arg-placeholders=false",
+        // -- log 信息  error 、 info(high level excution tracing) 、 verbose(low level details)
+        "--log=verbose",
+        // --"--ranking-model=decision_forest",
         "-j=32",
-        "--pretty"
+        "--pretty",
     ],
+    /*  ssh */
+    "remote.SSH.remotePlatform": {
+        "win_pc": "windows"
+    },
+    /* git */
+    "git.autorefresh": false,
+    "git.enabled": false,
+    "git.countBadge": "off",
+    "git.decorations.enabled": false,
+    "git.detectSubmodules": false,
     /* other */
-    "npm.autoDetect": "off"
+    "npm.autoDetect": "off",
+    "security.workspace.trust.untrustedFiles": "open",
+    "telemetry.telemetryLevel": "off",
+    "extensions.ignoreRecommendations": true,
+    "search.showLineNumbers": true,
 }

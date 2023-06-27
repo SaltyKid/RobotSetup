@@ -40,8 +40,6 @@ local cmp_config = {
         -- { name = 'ultisnips' },
         -- -- For snippy users.
         -- { name = 'snippy' },
-    },
-    {
         { name = "path" },
     }),
     -- 快捷键
@@ -93,6 +91,7 @@ local cmp_config = {
             buffer = 1,
             path = 1,
             nvim_lsp = 0,
+            vsnip = 1,
             luasnip = 1,
         },
         duplicates_default = 0,
@@ -138,9 +137,3 @@ cmp.setup.cmdline(':', {
 
 cmp.setup(cmp_config)
 
--- Set up lspconfig.
---local capabilities = require('cmp_nvim_lsp').default_capabilities()
----- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
---require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
---  capabilities = capabilities
---}

@@ -18,7 +18,7 @@ toggleterm.setup({
     --shell = vim.o.shell, -- change the default shell
     float_opts = {
         border = 'curved', --'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
-        width = vim.o.columns * 0.8,
+        --width = vim.o.columns * 0.8,
         --height = vim.o.lines * 0.5,
         winblend = 0,
     }

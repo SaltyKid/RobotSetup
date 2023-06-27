@@ -9,6 +9,9 @@ vim.g.maplocalleader = ';'
 --   visual_block_mode = "x",
 --   term_mode = "t", command_mode = "c",
 
+-- Insert --
+keymap('i', 'jj', '<Esc>', opts)
+
 -- Normal --
 -- Better window natigation
 keymap('n','<leader>q','<Cmd>q<CR>', opts)
@@ -54,6 +57,8 @@ keymap("n", "<leader>ch", ":BufferLineCloseLeft<CR>", opts)
 keymap("n", "<leader>cl", ":BufferLineCloseRight<CR>", opts)
 
 -- translator
+keymap("v", "<C-t>", ":TranslateW<CR>", opts)
+--keymap("v", "<C-t>", ":'<,'>TranslateW<CR>", opts)
 keymap("n", "<C-t>", ":TranslateW<CR>", opts)
 
 -- FileExpoler

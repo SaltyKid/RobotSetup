@@ -140,7 +140,27 @@ cursor:
 
 # Vi 模式下的光标样式
   # 同上面的配置项，如果设置为 None 那么会使用普通模式下的光标配置
-vi_mode_style: None
+vi_mode_style: Block
+
+# 鼠标配置
+mouse:  
+  # 点击配置
+  #
+  # 双击和三击的判定等待时间，数值越小，需要快速的双击才能判定为双击操作
+  # double_click: { threshold: 300 }
+  # triple_click: { threshold: 300 }
+
+  # 打字的时候临时隐藏鼠标
+  hide_when_typing: false
+
+# Mouse bindings
+# - `mouse`:
+#   - Middle
+#   - Left
+#   - Right
+mouse_bindings:
+  - { mouse: Right,  action: CopySelection  }
+  - { mouse: Middle, action: PasteSelection }
 
 key_bindings:
   - { key: F11,                                            action:  ToggleFullscreen      }

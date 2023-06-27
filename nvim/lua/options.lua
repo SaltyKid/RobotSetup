@@ -8,7 +8,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 -- 命令行高为2，提供足够的显示空间
-vim.opt.cmdheight = 2
+vim.opt.cmdheight = 1
 vim.opt.showcmd = true
 vim.opt.showmode = false
 
@@ -56,3 +56,10 @@ vim.opt.listchars = "space:·"
 vim.opt.listchars = "tab:> "
 
 vim.opt.timeoutlen = 500
+
+-- 开启 Folding 模块
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- 默认不要折叠
+-- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
+vim.opt.foldlevel = 99
