@@ -1,6 +1,6 @@
 {
     "!fun": {
-		"body": [
+        "body": [
             "/******************************************************************************",
             " * @brief        None",
             " *",
@@ -9,12 +9,12 @@
             " * @return       None",
             "******************************************************************************/",
             "$0"
-		],
-		"description": "fun brief"
-	},
-	"!c": {
-		"prefix": "!c",
-		"body": [
+        ],
+        "description": "fun brief"
+    },
+    "!c": {
+        "prefix": "!c",
+        "body": [
             "/*******************************************************************************",
             "* Copyleft (c) 2022 linyuzhou linyuzhou@lixiang.com",
             "*",
@@ -42,12 +42,12 @@
             "\n",
             "/*========================== FUNCTION PROTOTYPES ============================*/",
             "\n"
-		],
-		"description": "default c temple"
-	},
+        ],
+        "description": "default c temple"
+    },
     "!h": {
-		"prefix": "!h",
-		"body": [
+        "prefix": "!h",
+        "body": [
             "/*******************************************************************************",
             "* Copyleft (c) 2022 linyuzhou linyuzhou@lixiang.com",
             "*",
@@ -99,7 +99,7 @@
             "",
             "#endif",
             ""
-		],
-		"description": "default h temple"
+        ],
+        "description": "default h temple"
     }
 }
