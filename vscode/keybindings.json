@@ -115,5 +115,9 @@
         "key": "alt+k",
         "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
         "when": "inFilesPicker && inQuickOpen"
-    }
+    },
+    {
+        "key": "ctrl+k h",
+        "command": "clangd.inlayHints.toggle"
+    },
 ]

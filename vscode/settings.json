@@ -12,7 +12,7 @@
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.insertSpaces": true, //< 敲下tab键插入4个空格
     "editor.stickyTabStops": true,
-    "editor.wordBasedSuggestions": false, //< 关闭基于文件中单词联想的功能
+    "editor.wordBasedSuggestions": "off", //< 关闭基于文件中单词联想的功能
     "editor.suggestSelection": "first",
     "editor.lineNumbers": "relative",
     "editor.bracketPairColorization.enabled": true,
@@ -21,10 +21,12 @@
     "editor.largeFileOptimizations": false,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.stickyScroll.enabled": true,
-    "editor.inlayHints.enabled": "on",
+    "editor.inlayHints.enabled": "off",
     "editor.fontLigatures": true,
     "editor.scrollBeyondLastLine": false,
     // "editor.fontLigatures": true,
+    "editor.multiCursorLimit": 100000,
+    "editor.unicodeHighlight.invisibleCharacters": false,
     /* terminal */
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 16,
@@ -34,6 +36,27 @@
     "terminal.integrated.letterSpacing": 1,
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Windows PowerShell": {
+            "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
     /* file */
     "files.autoSave": "afterDelay",
     "files.associations": {
@@ -42,16 +65,17 @@
         ".clang-format": "yaml",
         "*.log": "log",
         "*.JLinkScript": "cpp",
-        "*.json": "jsonc"
+        "*.json": "jsonc",
+        "*.gui": "gn",
     },
     /* workbench */
     "workbench.iconTheme": "vscode-great-icons",
-    "workbench.activityBar.visible": false,
     "workbench.list.smoothScrolling": true,
     "workbench.startupEditor": "none",
     "workbench.sideBar.location": "right",
-    "workbench.editorLargeFileConfirmation": 100,
     "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.editorLargeFileConfirmation": 100,
+    "workbench.activityBar.location": "hidden",
     /* debug */
     "debug.console.fontSize": 16,
     "debug.console.fontFamily": "JetBrainsMono Nerd Font Mono",
@@ -363,12 +387,12 @@
         "editor.formatOnSave": true
     },
     /* hexeditor */
-    "hexeditor.columnWidth": 8,
+    "hexeditor.columnWidth": 16,
     "hexeditor.showDecodedText": true,
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
     /* clangd */
-    "clangd.path": "/home/linyuzhou/.local/share/nvim/lsp_servers/clangd/clangd/bin/clangd",
+    "clangd.path": "/home/linyuzhou/My_Tools/clangd/bin/clangd",
     "clangd.arguments": [
         // -- 后台建立索引，并持久化到disk
         "--background-index",
@@ -400,10 +424,16 @@
         // --"--ranking-model=decision_forest",
         "-j=32",
         "--pretty",
+        "--limit-references=1000",
+        "--limit-results=100",
+        "--pretty"
     ],
     /*  ssh */
     "remote.SSH.remotePlatform": {
-        "win_pc": "windows"
+        "win_pc":"windows"
+    },
+    "remote.SSH.serverInstallPath": {
+        "win_pc": "D:\\ProgramFiles\\VSCode_Server"
     },
     /* git */
     "git.autorefresh": false,
@@ -415,6 +445,5 @@
     "npm.autoDetect": "off",
     "security.workspace.trust.untrustedFiles": "open",
     "telemetry.telemetryLevel": "off",
-    "extensions.ignoreRecommendations": true,
     "search.showLineNumbers": true,
 }
